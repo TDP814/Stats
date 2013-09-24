@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class Stats {
 
 	public static void main(String[] args) {
-		int [] a = {100,26,433,24,19};
+		int [] a = {100,26,433,24,24,19};
 		Arrays.sort(a);
 		System.out.println("Original Array(sorted): ");
 		print(a);
@@ -98,7 +98,7 @@ public class Stats {
 		return median;
 	}
 
-	public staic double upperQuartile(int[] a){
+	public static double upperQuartile(int[] a){
 		double median = 0.0;
 		int oddLength = a.length - 1;
 		if (a.length % 2 == 0) {
