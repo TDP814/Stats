@@ -8,6 +8,8 @@ public class Stats {
 		System.out.println("The min value is: "+ min(a));
 		System.out.println("The mean value is: "+ mean(a));
 		System.out.println("The median value is: "+median(a));
+		System.out.println("The quartile is: "+lowerQuartile(a));
+		System.out.println("The standard Deviation is: "+standardDeviation(a));
 	}
 
 	public static void print(int[] a){
@@ -72,4 +74,45 @@ public class Stats {
 		}
 		return median;
 	}
+
+		public static double lowerQuartile(int[] a) {
+		double median = 0.0;
+		int oddLength = a.length + 1;
+		if (a.length % 2 == 0) {
+			if ((a.length/2) % 2 == 0) {
+				median = ((double)a[a.length/4] + (double)a[(a.length/4 - 1)]) / 2.0;
+			} else {
+				median = a[(oddLength/4)];
+			}
+		} else {
+			if ((oddLength/2) % 2 == 0) {
+				median = ((double)a[oddLength/4] + (double)a[(oddLength/4 + 1)]) / 2.0;
+			} else {
+				median = a[((oddLength - 2)/4 - 1)] + a[(oddLength - 2)/4];
+			}
+		}
+		return median;
+	}
+	public static double standardDeviation(int[] a) {
+		int u = 0;
+		int [] m = new int [a.length];
+		int sum = 0;
+		double standardDeviation = 0;
+		for (int i = 0; i < a.length; i++) {
+			u += a[i];
+		}
+		u /= a.length;
+		for (int i = 0; i < a.length; i++) {
+			m[i] = a[i] - u;
+			m[i] *= m[i];
+		}
+		for (int i = 0; i < a.length; i++) {
+			sum += m[i];
+		}
+		standardDeviation = sum / (double)a.length;
+		return Math.sqrt(standardDeviation);
+
+	}
+
+
 }
