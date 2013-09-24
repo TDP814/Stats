@@ -2,18 +2,18 @@ import java.util.Arrays;
 public class Stats {
 
 	public static void main(String[] args) {
-		int [] a = {-6,-2,1,7};
-		Arrays.sort(a);
-		System.out.println("Original Array(sorted): ");
-		print(a);
-		System.out.println("The max value is: "+ max(a));
-		System.out.println("The min value is: "+ min(a));
-		System.out.println("The mean value is: "+ mean(a));
-		System.out.println("The median value is: "+median(a));
-		System.out.println("The lower quartile is: "+quartile1(a));
-		System.out.println("The upper quartile is: "+quartile3(a));
-		System.out.println("The mode is: "+mode(a));
-		System.out.println("The standard Deviation is: "+standardDeviation(a));
+		// int [] a = {-6,-2,1,7};
+		// Arrays.sort(a);
+		// System.out.println("Original Array(sorted): ");
+		// print(a);
+		// System.out.println("The max value is: "+ max(a));
+		// System.out.println("The min value is: "+ min(a));
+		// System.out.println("The mean value is: "+ mean(a));
+		// System.out.println("The median value is: "+median(a));
+		// System.out.println("The lower quartile is: "+quartile1(a));
+		// System.out.println("The upper quartile is: "+quartile3(a));
+		// System.out.println("The mode is: "+mode(a));
+		// System.out.println("The standard Deviation is: "+standardDeviation(a));
 	}
 
 	public static void print(int[] a){
