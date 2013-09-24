@@ -2,7 +2,7 @@ import java.util.Arrays;
 public class Stats {
 
 	public static void main(String[] args) {
-		int [] a = {100,26,433,24,24,19};
+		int [] a = {-6,-2,1,7};
 		Arrays.sort(a);
 		System.out.println("Original Array(sorted): ");
 		print(a);
@@ -156,7 +156,7 @@ public class Stats {
 		for (int i = 0; i < a.length; i++) {
 			sum += m[i];
 		}
-		standardDeviation = sum / (double)a.length;
+		standardDeviation = sum / ((double)a.length - 1);
 		return Math.sqrt(standardDeviation);
 
 	}
