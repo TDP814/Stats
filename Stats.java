@@ -12,6 +12,7 @@ public class Stats {
 		System.out.println("The median value is: "+median(a));
 		System.out.println("The lower quartile is: "+lowerQuartile(a));
 		System.out.println("The upper quartile is: "+upperQuartile(a));
+		System.out.println("The mode is: "+mode(a));
 		System.out.println("The standard Deviation is: "+standardDeviation(a));
 	}
 
@@ -117,7 +118,26 @@ public class Stats {
 	}
 
 	public static int mode(int[] a){
-
+		int mode = a[0];
+		int countMode = 1;
+		int[] count = new int [a.length];
+		for (int i=0; i<a.length; i++) {
+			count [i]=0;
+		}
+		for (int i=0; i<a.length; i++) {
+			for (int j=0; j<a.length; j++) {
+				if (a[i] == a[j]) {
+					count [i] += 1;
+				}
+			}
+		}
+		for (int i=0; i<a.length; i++) {
+			if (count[i]>countMode) {
+				mode = a[i];
+				countMode = count[i];
+			}
+		}
+		return mode;
 	}
 
 	public static double standardDeviation(int[] a) {
