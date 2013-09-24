@@ -72,7 +72,7 @@ public class Stats {
 	public static double median(int[] a){
 		double median = 0.0;
 		if (a.length % 2 == 0) {
-			median = ((double)a[a.length/2 + 1] + (double)a[a.length/2-1])/2;
+			median = ((double)a[a.length/2] + (double)a[a.length/2-1])/2.0;
 		}else{
 			median = (a[a.length/2]);
 		}
@@ -111,7 +111,7 @@ public class Stats {
 			if ((oddLength/2) % 2 == 0) {
 				median = ((double)a[oddLength/4 + (oddLength/2)] + (double)a[(oddLength/4 + 1) + (oddLength/2)]) / 2.0;
 			} else {
-				median = (a[((oddLength/4)) + (int)(oddLength/2 + 1)])/2.0;
+				median = (a[((oddLength/2)) + (int)(oddLength/2 + 1)])/2.0;
 			}
 		}
 		return median;
