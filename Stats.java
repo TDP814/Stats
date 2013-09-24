@@ -4,11 +4,15 @@ public class Stats {
 	public static void main(String[] args) {
 		int [] a = {100,26,433,24,19};
 		Arrays.sort(a);
+		System.out.println("Original Array(sorted): ");
+		print(a);
 		System.out.println("The max value is: "+ max(a));
 		System.out.println("The min value is: "+ min(a));
 		System.out.println("The mean value is: "+ mean(a));
 		System.out.println("The median value is: "+median(a));
-		System.out.println("The quartile is: "+lowerQuartile(a));
+		System.out.println("The lower quartile is: "+lowerQuartile(a));
+		System.out.println("The upper quartile is: "+upperQuartile(a));
+		System.out.println("The mode is: "+mode(a));
 		System.out.println("The standard Deviation is: "+standardDeviation(a));
 	}
 
@@ -75,7 +79,7 @@ public class Stats {
 		return median;
 	}
 
-		public static double lowerQuartile(int[] a) {
+	public static double lowerQuartile(int[] a) {
 		double median = 0.0;
 		int oddLength = a.length + 1;
 		if (a.length % 2 == 0) {
@@ -93,6 +97,49 @@ public class Stats {
 		}
 		return median;
 	}
+
+	public staic double upperQuartile(int[] a){
+		double median = 0.0;
+		int oddLength = a.length - 1;
+		if (a.length % 2 == 0) {
+			if ((a.length/2) % 2 == 0) {
+				median = ((double)a[a.length/4 + (a.length/2)] + (double)a[(a.length/4 - 1)+(a.length/2)]) / 2.0;
+			} else {
+				median = a[(oddLength/4)+ (int)(oddLength/2+1)];
+			}
+		} else {
+			if ((oddLength/2) % 2 == 0) {
+				median = ((double)a[oddLength/4 + oddLength/2] + (double)a[(oddLength/4 + 1) + (oddLength/2)]) / 2.0;
+			} else {
+				median = (a[((oddLength/4)) + (int)(oddLength/2 + 1)])/2.0;
+			}
+		}
+		return median;
+	}
+
+	public static int mode(int[] a){
+		int mode = a[0];
+		int countMode = 1;
+		int[] count = new int [a.length];
+		for (int i=0; i<a.length; i++) {
+			count [i]=0;
+		}
+		for (int i=0; i<a.length; i++) {
+			for (int j=0; j<a.length; j++) {
+				if (a[i] == a[j]) {
+					count [i] += 1;
+				}
+			}
+		}
+		for (int i=0; i<a.length; i++) {
+			if (count[i]>countMode) {
+				mode = a[i];
+				countMode = count[i];
+			}
+		}
+		return mode;
+	}
+
 	public static double standardDeviation(int[] a) {
 		int u = 0;
 		int [] m = new int [a.length];
@@ -113,6 +160,4 @@ public class Stats {
 		return Math.sqrt(standardDeviation);
 
 	}
-
-
 }
