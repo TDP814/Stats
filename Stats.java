@@ -11,7 +11,7 @@ public class Stats {
 		System.out.println("The mean value is: "+ mean(a));
 		System.out.println("The median value is: "+median(a));
 		System.out.println("The lower quartile is: "+quartile1(a));
-		System.out.println("The upper quartile is: "+quartile2(a));
+		System.out.println("The upper quartile is: "+quartile3(a));
 		System.out.println("The mode is: "+mode(a));
 		System.out.println("The standard Deviation is: "+standardDeviation(a));
 	}
@@ -98,7 +98,7 @@ public class Stats {
 		return median;
 	}
 
-	public static double quartile2(int[] a){
+	public static double quartile3(int[] a){
 		double median = 0.0;
 		int oddLength = a.length - 1;
 		if (a.length % 2 == 0) {
