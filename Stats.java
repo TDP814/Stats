@@ -92,7 +92,7 @@ public class Stats {
 			if ((oddLength/2) % 2 == 0) {
 				median = ((double)a[oddLength/4] + (double)a[(oddLength/4 + 1)]) / 2.0;
 			} else {
-				median = a[((oddLength - 2)/4 - 1)] + a[(oddLength - 2)/4];
+				median = (a[((oddLength - 2)/4 - 1)] + a[(oddLength - 2)/4])/2.0;
 			}
 		}
 		return median;
@@ -109,7 +109,7 @@ public class Stats {
 			}
 		} else {
 			if ((oddLength/2) % 2 == 0) {
-				median = ((double)a[oddLength/4 + oddLength/2] + (double)a[(oddLength/4 + 1) + (oddLength/2)]) / 2.0;
+				median = ((double)a[oddLength/4 + (oddLength/2)] + (double)a[(oddLength/4 + 1) + (oddLength/2)]) / 2.0;
 			} else {
 				median = (a[((oddLength/4)) + (int)(oddLength/2 + 1)])/2.0;
 			}
